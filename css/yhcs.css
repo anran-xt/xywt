@@ -1,0 +1,197 @@
+﻿body{
+    margin:0;
+    padding:0;
+    background: url(../img/yhcs/bg.png) center top repeat;
+}
+
+h1,h2,h3,h4,h5,h6,ul,p{
+    margin:0;
+    padding:0;
+}
+
+a{
+    text-decoration: none;
+}
+#header{
+    font-size:14px;
+    margin:0 auto;
+    height:35px;
+    line-height:35px;
+    color:#6c6c6c;
+    background:#f5f5f5;
+
+}
+#header .innerHead,#wtContainer .innerContainer{
+    margin:0 auto;
+    width:1050px;
+}
+#header .noteLogin{
+    margin-right:10px;
+}
+#header .siteNav{
+    float:right;
+}
+#header .siteNav li{
+    display: inline-block;
+    margin:0 5px;
+}
+#header .innerHead a{
+    color:#6c6c6c;
+}
+#header .yhIcon{
+    width:180px;
+}
+#header .yhIcon,#header .yhkh{
+    display: inline-block;
+}
+#header .yhkh{
+    position:relative;
+    top:-30px;
+    font-family:"华文新魏","楷体";
+    font-size:18px;
+}
+#header .yhDes{
+    width:1050px;
+    margin:auto;
+    position:relative;
+}
+#header .yhDes .hy{
+    font-family: "华文新魏", "楷体";
+    font-size:22px;
+    color:#D62617;
+    position: absolute;
+    left:50%;
+    margin-left:-100px;
+    top:50px;
+    /*z-index: 9;*/
+}
+
+
+/*mainBody*/
+.mainBody{
+    width:1050px;
+    margin:135px auto 0 auto;
+}
+
+
+
+#commodityShelf {
+    /*text-align: center;*/
+    margin-top:135px;
+    position: relative;
+    height:560px;
+}
+
+#commodityShelf .shelf{
+    width:750px;
+    height:550px;
+    border-radius:15px;
+    box-shadow: 0 0 10px #6c6c6c;
+    position: absolute;
+    background: white;
+    transition:all 0.5s;
+    /*left:0;right:0;*/
+    /*top:0;bottom:0;*/
+}
+#commodityShelf .shelf1{
+    transform: scale(0.5);
+    z-index: 7;
+    left:-187px;
+
+
+}
+#commodityShelf .shelf2{
+    transform: scale(0.75);
+    z-index: 8;
+    left:-18px;
+
+
+
+}
+#commodityShelf .shelf3{
+    left:150px;
+    transform: scale(1.0);
+    z-index: 9;
+
+
+}
+#commodityShelf .shelf4{
+    transform: scale(0.75);
+    z-index: 8;
+    left:318px;
+
+
+}
+#commodityShelf .shelf5{
+    transform: scale(0.5);
+    left:478px;
+    z-index: 7;
+
+}
+
+#commodityShelf .shelf .sp{
+    min-width:120px;
+    height:120px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#commodityShelf .shelf .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    padding:10px;
+}
+
+#commodityShelf img{
+    width:68px;
+    height:68px;
+}
+#commodityShelf .jianguo img{
+    height:80px;
+    width:auto;
+}
+.shadow{
+    position: absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    background:black;
+    opacity: 0.3;
+    border-radius:15px;
+    transition:all 1s;
+}
+
+.shelfName{
+    position: absolute;
+    bottom:10px;
+    left:50%;
+    margin-left:-36px;
+    font-size:18px;
+    font-weight:bold;
+    color:black;
+}
+
+#commodityShelf .menuList{
+    position: absolute;
+    left:-110px;
+    top:20%;
+}
+#commodityShelf .menuList .listUl li{
+    /*list-style: none;*/
+    list-style: upper-alpha;
+
+    padding-top:10px;
+    font-size:16px;
+    width:80px;
+    height:30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+#commodityShelf .menuList .listUl .liChosed{
+    background: url(../img/yhcs/choseBg.png) 0% 50% no-repeat;
+    background-size: 80px 30px;
+    background-origin: content-box;
+}
+

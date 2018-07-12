@@ -1,0 +1,737 @@
+SET NAMES UTF8;
+drop database if exists xywtWeb;
+create database xywtWeb charset=utf8;
+use xywtWeb;
+
+
+#创建展示商品表
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#商品数据表
+#origin largeclass middleclass smallclass tradename productimg spec ifsalespromotion nowpri oldpri salesvolume surplus
+# 来源   大分类     中分类      小分类     商品名    商品图片  规格    是否在促销    现价    旧价    销量      剩余量
+
+create table commodity(
+    cid int auto_increment primary key,
+    origin varchar(128) not null,
+    largeclass varchar(64) default null,
+    middleclass varchar(64) default null,
+    smallclass varchar(64) default null,
+    tradename varchar(128) not null,
+    productimg varchar(128) not null,
+    spec varchar(8) not null,
+    ifsalespromotion boolean default false,
+    nowpri decimal(5,2)  not null,
+    oldpri decimal(5,2)  not null,
+    salesvolume int default 0,
+    surplus int default 999
+);
+
+#yhcs/xxls
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "饼干面包",
+    "饼干",
+    "纳宝帝奶酪威化饼干",
+    "img/new/yhcs/nbdnnbg.jpg",
+    "盒",
+    true,
+    9.5,
+    11,
+    185,
+    default
+);
+insert into commodity values(
+      default,
+      "永辉超市",
+      "休闲零食",
+      "饼干面包",
+      "饼干",
+      "百奇饼干棒",
+      "img/new/yhcs/bqqklbg.jpg",
+      "盒",
+      true,
+      3.5,
+      4,
+      56,
+      default
+  );
+  insert into commodity values(
+      default,
+      "永辉超市",
+      "休闲零食",
+      "膨化食物",
+      "薯片",
+      "薯愿薯片",
+      "img/new/yhcs/sysp.jpg",
+      "盒",
+      true,
+      3,
+      4,
+      79,
+      default
+  );
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "饼干面包",
+    "面包",
+    "好丽友派",
+    "img/new/yhcs/hlyp.jpg",
+    "盒",
+    true,
+    5,
+    5.5,
+    138,
+    default
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "糖果巧克力",
+    "巧克力",
+    "德芙巧克力",
+    "img/new/yhcs/hzdfqkl.jpg",
+    "盒",
+    true,
+    35,
+    40,
+    29,
+    138
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "糖果巧克力",
+    "糖果",
+    "旺仔牛奶糖",
+    "img/new/yhcs/wznnt.jpg",
+    "袋",
+    false,
+    2.5,
+    2.5,
+    205,
+    999
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "糖果巧克力",
+    "布丁",
+    "芒果布丁",
+    "img/new/yhcs/mgbd.jpg",
+    "个",
+    false,
+    3.5,
+    3.5,
+    163,
+    999
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "糖果巧克力",
+    "果冻",
+    "喜之郎小果冻",
+    "img/new/yhcs/mgbd.jpg",
+    "袋",
+    false,
+    7.5,
+    8.5,
+    63,
+    999
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "饼干面包",
+    "面包",
+    "达利园小面包",
+    "img/new/yhcs/dlyxmb.jpg",
+    "袋",
+    true,
+    8.5,
+    9,
+    110,
+    999
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "饼干面包",
+    "面包",
+    "盼盼法式小面包",
+    "img/new/yhcs/ppfsxmb.jpg",
+    "袋",
+    true,
+    10,
+    11,
+    187,
+    999
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "饼干面包",
+    "饼干",
+    "好吃点饼干",
+    "img/new/yhcs/hcdbg.jpg",
+    "盒",
+    true,
+    4.5,
+    5.5,
+    63,
+    999
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "饼干面包",
+    "饼干",
+    "手指饼",
+    "img/new/yhcs/szbg.jpg",
+    "盒",
+    true,
+    2.5,
+    3.5,
+    163,
+    999
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "坚果炒货",
+    "花生",
+    "酥糖花生",
+    "img/new/yhcs/sths.jpg",
+    "袋",
+    true,
+    4.5,
+    5.5,
+    63,
+    999
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "坚果炒货",
+    "瓜子",
+    "香瓜子",
+    "img/new/yhcs/xgz.jpg",
+    "袋",
+    true,
+    2.5,
+    3,
+    76,
+    999
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "坚果炒货",
+    "开心果",
+    "开心果",
+    "img/new/yhcs/kxg.jpg",
+    "袋",
+    false,
+    4.5,
+    4.5,
+    56,
+    999
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "坚果炒货",
+    "夏威夷果",
+    "盐焗夏威夷果",
+    "img/new/yhcs/yjxwyg.jpg",
+    "袋",
+    false,
+    5.5,
+    5.5,
+    102,
+    999
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "膨化食物",
+    "薯片",
+    "可比克薯片",
+    "img/new/yhcs/kbksp.jpg",
+    "袋",
+    false,
+    2.5,
+    2.5,
+    76,
+    999
+);
+
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "果干",
+    "红枣",
+    "好想你红枣果干",
+    "img/new/yhcs/hzgg.jpg",
+    "袋",
+    false,
+    5.5,
+    5.5,
+    86,
+    105
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "果干",
+    "芒果干",
+    "良品铺子芒果子",
+    "img/new/yhcs/mggg.jpg",
+    "袋",
+    false,
+    6.5,
+    6.5,
+    77,
+    205
+);
+
+#yhcs/shyp
+insert into commodity values(
+    default,
+    "永辉超市",
+    "生活用品",
+    "个人护理",
+    "沐浴露",
+    "力士沐浴露",
+    "img/new/yhcs/lsmyl.jpg",
+    "瓶",
+    true,
+    18,
+    20,
+    87,
+    268
+);
+insert into commodity values(
+      default,
+      "永辉超市",
+      "生活用品",
+      "个人护理",
+      "洗发露",
+      "海飞丝洗发露",
+      "img/new/yhcs/hfs.jpg",
+      "瓶",
+      true,
+      23,
+      25,
+      69,
+      default
+  );
+  insert into commodity values(
+      default,
+      "永辉超市",
+      "生活用品",
+      "个人护理",
+      "洗面奶",
+      "欧莱雅男士洗面奶",
+      "img/new/yhcs/oly.jpg",
+      "瓶",
+      true,
+      28,
+      32,
+      249,
+      default
+  );
+  insert into commodity values(
+        default,
+        "永辉超市",
+        "生活用品",
+        "个人护理",
+        "爽肤水",
+        "雅诗兰黛爽肤水",
+        "img/new/yhcs/ysld.jpg",
+        "瓶",
+        true,
+        48,
+        55,
+        39,
+        default
+    );
+
+insert into commodity values(
+    default,
+    "永辉超市",
+    "生活用品",
+    "美妆",
+    "卸妆",
+    "+++++",
+    "-----",
+    "瓶",
+    false,
+    0,
+    0,
+    0,
+    0
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "生活用品",
+    "美妆",
+    "眼霜",
+    "+++++",
+    "-----",
+    "瓶",
+    false,
+    0,
+    0,
+    0,
+    0
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "生活用品",
+    "美妆",
+    "乳液",
+    "+++++",
+    "-----",
+    "瓶",
+    false,
+    0,
+    0,
+    0,
+    0
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "生活用品",
+    "美妆",
+    "粉底液",
+    "+++++",
+    "-----",
+    "瓶",
+    false,
+    0,
+    0,
+    0,
+    0
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "生活用品",
+    "美妆",
+    "唇膏",
+    "+++++",
+    "-----",
+    "瓶",
+    false,
+    0,
+    0,
+    0,
+    0
+);
+insert into commodity values(
+    default,
+    "永辉超市",
+    "生活用品",
+    "美妆",
+    "精华",
+    "+++++",
+    "-----",
+    "瓶",
+    false,
+    0,
+    0,
+    0,
+    0
+);
+
+
+
+
+#果然不错
+#grbc/thcx
+insert into commodity values(
+        default,
+        "果然不错",
+        "常见水果",
+        "苹果",
+        "富士苹果",
+        "富士苹果",
+        "img/new/grbc/fspg.jpg",
+        "斤",
+        true,
+        2.5,
+        3,
+        78,
+        default
+);
+insert into commodity values(
+        default,
+        "果然不错",
+        "常见水果",
+        "香蕉",
+        "大香蕉",
+        "大香蕉",
+        "img/new/grbc/yzxj.jpg",
+        "斤",
+        true,
+        2,
+        2.5,
+        59,
+        default
+);
+insert into commodity values(
+        default,
+        "果然不错",
+        "常见水果",
+        "梨子",
+        "鸭梨",
+        "鸭梨",
+        "img/new/grbc/yl.jpg",
+        "斤",
+        true,
+        1.5,
+        2,
+        95,
+        default
+);
+insert into commodity values(
+        default,
+        "果然不错",
+        "常见水果",
+        "葡萄",
+        "赤霞珠",
+        "赤霞珠",
+        "img/new/grbc/pt.jpg",
+        "斤",
+        true,
+        3,
+        4.5,
+        32,
+        default
+);
+insert into commodity values(
+        default,
+        "果然不错",
+        "常见水果",
+        "柚子",
+        "沙坪柚",
+        "沙坪柚",
+        "img/new/grbc/dyz.jpg",
+        "斤",
+        true,
+        2.5,
+        3,
+        48,
+        default
+);
+insert into commodity values(
+        default,
+        "果然不错",
+        "新品上市",
+        "提子",
+        "提子",
+        "红提子",
+        "img/new/grbc/htz.jpg",
+        "斤",
+        true,
+        2,
+        2.5,
+        85,
+        default
+);
+insert into commodity values(
+        default,
+        "果然不错",
+        "新品上市",
+        "柚子",
+        "柚子",
+        "红心柚",
+        "img/new/grbc/hxy.jpg",
+        "斤",
+        true,
+        2,
+        2.5,
+        110,
+        default
+);
+insert into commodity values(
+        default,
+        "果然不错",
+        "新品上市",
+        "桃子",
+        "桃子",
+        "油桃",
+        "img/new/grbc/yt.jpg",
+        "斤",
+        true,
+        2,
+        2.5,
+        125,
+        default
+);
+
+
+#smallclass的图片显示数据表
+#origin largeclass middleclass smallclass disimg
+#来源   大分类     中分类       小分类    显示图片
+#drop table smallpic;
+create table smallpic(
+    sid int auto_increment primary key,
+    origin varchar(128) not null,
+    largeclass varchar(64) default null,
+    middleclass varchar(64) default null,
+
+    disimg varchar(128) not null
+);
+insert into smallpic values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "糖果巧克力",
+    "img/new/logo/tgqkl.jpg"
+);
+insert into smallpic values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "饼干面包",
+    "img/new/logo/bgsp.jpg"
+);
+insert into smallpic values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "坚果炒货",
+    "img/new/logo/jianguo.jpg"
+);
+insert into smallpic values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "果干",
+    "img/new/logo/guogan.jpg"
+);
+insert into smallpic values(
+    default,
+    "永辉超市",
+    "休闲零食",
+    "膨化食物",
+    "img/new/logo/phsw.jpg"
+);
+insert into smallpic values(
+    default,
+    "永辉超市",
+    "生活用品",
+    "个人护理",
+    "img/new/logo/grhl.jpg"
+);
+insert into smallpic values(
+    default,
+    "永辉超市",
+    "生活用品",
+    "美妆",
+    "img/new/logo/meizhuang.jpg"
+);
+
+
+insert into smallpic values(
+    default,
+    "果然不错",
+    "常见水果",
+    "苹果",
+    "img/new/logo/pg.jpg"
+);
+insert into smallpic values(
+    default,
+    "果然不错",
+    "常见水果",
+    "香蕉",
+    "img/new/logo/xj.jpg"
+);
+insert into smallpic values(
+    default,
+    "果然不错",
+    "常见水果",
+    "橙子",
+    "img/new/logo/jz.jpg"
+);
+insert into smallpic values(
+    default,
+    "果然不错",
+    "常见水果",
+    "梨子",
+    "img/new/logo/lz.jpg"
+);
+insert into smallpic values(
+    default,
+    "果然不错",
+    "常见水果",
+    "柚子",
+    "img/new/logo/youzi.jpg"
+);
+insert into smallpic values(
+    default,
+    "果然不错",
+    "常见水果",
+    "葡萄",
+    "img/new/logo/pt.jpg"
+);
+insert into smallpic values(
+    default,
+    "果然不错",
+    "新品上市",
+    "柚子",
+    "img/new/logo/hxy.jpg"
+);
+insert into smallpic values(
+    default,
+    "果然不错",
+    "新品上市",
+    "桃子",
+    "img/new/logo/yt.jpg"
+);
+insert into smallpic values(
+    default,
+    "果然不错",
+    "新品上市",
+    "提子",
+    "img/new/logo/htz.jpg"
+);
+
